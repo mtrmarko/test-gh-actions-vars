@@ -30,4 +30,5 @@ jobs:
       - name: Run a multi-line script
         run: |
           .github/workflows/test.sh
-          echo {{env.MY_NAME }}
+          echo ${{ env.MY_NAME }}
+          echo $MY_NAME
