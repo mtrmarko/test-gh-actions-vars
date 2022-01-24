@@ -4,6 +4,11 @@ on:
     branches: [ main ]
     types: [ opened ]
   workflow_dispatch:
+    inputs:
+      uniqueRunID:
+        description: 'Unique Run ID'
+        required: true
+        default: 'zz20220124000000'
 jobs:
   dump_contexts_to_log:
     runs-on: ubuntu-latest
