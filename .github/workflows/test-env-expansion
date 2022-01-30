@@ -1,0 +1,15 @@
+name: test-env-expansion
+
+on:
+  workflow_dispatch:
+env:
+  WORKING_DIR: /cicd-working
+  INTEG_TEST_REPO: np-integration-testing
+  CICD_SCRIPTS_DIR: ${{ env.WORKING_DIR }}/${{ env.INTEG_TEST_REPO }}/cicd_scripts
+jobs:
+  test-job:
+    runs-on: ubuntu
+    steps:
+    - name: Test exho
+      run: |
+        echo "$CICD_SCRIPTS_DIR"
